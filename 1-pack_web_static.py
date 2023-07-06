@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Fabfile to generates gz.
+# Fabfile to generates a .tgz
 import os.path
 from datetime import datetime
 from fabric.api import local
@@ -19,4 +19,4 @@ def do_pack():
             return None
     if local("tar -cvzf {} web_static".format(file)).failed is True:
         return None
-    return filie
+    return file
